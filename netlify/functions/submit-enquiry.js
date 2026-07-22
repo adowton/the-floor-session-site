@@ -12,6 +12,16 @@ exports.handler = async function (event) {
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Leads";
 
+  // TEMPORARY DIAGNOSTIC — safe to leave in briefly, logs no secret values.
+  console.log("Diagnostic:", {
+    tokenPresent: !!AIRTABLE_TOKEN,
+    tokenLength: AIRTABLE_TOKEN ? AIRTABLE_TOKEN.length : 0,
+    tokenPrefix: AIRTABLE_TOKEN ? AIRTABLE_TOKEN.slice(0, 3) : null,
+    baseIdPresent: !!AIRTABLE_BASE_ID,
+    baseIdPrefix: AIRTABLE_BASE_ID ? AIRTABLE_BASE_ID.slice(0, 3) : null,
+    tableName: AIRTABLE_TABLE_NAME,
+  });
+
   if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID) {
     return {
       statusCode: 500,
