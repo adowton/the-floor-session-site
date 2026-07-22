@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE FLOOR SESSION: Corporate Team Building Through Music &amp; Movement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14141b;
+    --ink-soft:#1e1e28;
+    --paper:#edeff0;
+    --paper-raise:#ffffff;
+    --coral:#f5e600;
+    --coral-dim:#d9cc00;
+    --gold:#f5e600;
+    --ink-70:rgba(237,239,240,.7);
+    --ink-45:rgba(237,239,240,.45);
+    --paper-ink-70:rgba(20,20,27,.68);
+    --paper-ink-45:rgba(20,20,27,.45);
+    --radius:14px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:400;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Unbounded',sans-serif;
+    margin:0;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .eyebrow.on-dark{color:var(--gold);}
+  .eyebrow.on-light{color:var(--ink);}
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,230,0,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(20,20,27,.12);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brand-lockup{display:flex;align-items:center;gap:10px;flex:none;color:var(--ink);}
+  footer .brand-lockup{color:var(--coral);}
+  .brand-mark{width:40px;height:40px;flex:none;}
+  .brand-word{
+    font-family:'Unbounded',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+  }
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    color:var(--paper-ink-70);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+    cursor:pointer;
+    border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--coral);color:var(--ink);box-shadow:0 8px 20px -6px rgba(245,230,0,.35);}
+  .btn-primary:hover{background:var(--coral-dim);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(20,20,27,.3);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-dark{background:var(--ink);color:var(--coral);}
+  .btn-dark:hover{background:var(--ink-soft);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    padding:76px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:56px;
+    align-items:center;
+    padding-bottom:56px;
+  }
+  .hero-hook{
+    font-size:clamp(15px,2vw,18px);
+    font-weight:700;
+    color:var(--coral);
+    margin-bottom:12px;
+    max-width:38ch;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem,7vw,4.75rem);
+    line-height:1;
+    color:#fff;
+    margin-top:0;
+    letter-spacing:-0.02em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--coral);
+  }
+  .hero-tagline{
+    margin-top:14px;
+    font-size:clamp(17px,2.4vw,21px);
+    font-weight:700;
+    color:#fff;
+    opacity:.85;
+  }
+  .hero p.lede{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-70);
+    max-width:44ch;
+  }
+  .hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:20px;
+    background:linear-gradient(155deg,#1a1a10,#0d0d0d 60%);
+    border:1px solid rgba(255,255,255,.1);
+    overflow:hidden;
+    display:flex;align-items:flex-end;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(245,230,0,.30), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(245,230,0,.16), transparent 50%);
+  }
+  .hero-visual-caption{
+    position:relative;z-index:2;
+    padding:24px;
+    font-size:13px;
+    color:var(--ink-70);
+  }
+  .hero-visual-caption strong{display:block;color:#fff;font-family:'Unbounded';font-size:14px;margin-bottom:4px;}
+
+  .trust-strip{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:22px 0;
+  }
+  .trust-strip .wrap{
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+    font-size:12px;color:var(--ink-45);letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+  }
+  .trust-strip .chip{
+    display:flex;align-items:center;gap:8px;
+    color:var(--ink-70);
+  }
+  .trust-strip .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex:none;}
+
+  /* ===== BEAT DIVIDER (signature element) ===== */
+  .beatline{
+    width:100%;
+    height:44px;
+    display:block;
+  }
+  .beatline rect{
+    fill:var(--coral);
+    animation:beat 1.6s ease-in-out infinite;
+    transform-origin:center;
+  }
+
+  @keyframes beat{
+    0%,100%{transform:scaleY(.35);}
+    50%{transform:scaleY(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .beatline rect{animation:none;transform:scaleY(.7);}
+  }
+
+  /* ===== SECTION GENERIC ===== */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);margin-top:14px;}
+  .section-head p{margin-top:16px;font-size:16px;color:var(--paper-ink-70);}
+
+  /* ===== WHY / BENEFITS ===== */
+  .benefits{background:var(--paper);}
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .benefit-card{
+    background:var(--paper-raise);
+    border:1px solid rgba(20,20,27,.08);
+    border-radius:var(--radius);
+    padding:30px 26px;
+  }
+  .benefit-num{
+    font-family:'Unbounded';
+    font-size:13px;
+    color:var(--ink);
+    font-weight:700;
+  }
+  .benefit-card h3{
+    font-size:19px;
+    margin-top:14px;
+    color:var(--ink);
+  }
+  .benefit-card p{
+    margin-top:10px;
+    font-size:14.5px;
+    color:var(--paper-ink-70);
+  }
+
+  .feel-strip{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-bottom:40px;
+  }
+  .feel-tag{
+    font-size:13px;font-weight:600;
+    padding:9px 16px;
+    border-radius:999px;
+    background:var(--paper-raise);
+    border:1px solid rgba(20,20,27,.1);
+    color:var(--paper-ink-70);
+  }
+
+  /* ===== HOW IT WORKS (dark) ===== */
+  .process{background:var(--ink);color:#fff;}
+  .process .section-head p{color:var(--ink-70);}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    counter-reset:step;
+  }
+  .step{
+    padding:0 24px 0 0;
+    border-left:1px solid rgba(255,255,255,.1);
+    padding-left:24px;
+    position:relative;
+  }
+  .step:first-child{border-left:none;padding-left:0;}
+  .step-index{
+    font-family:'Unbounded';
+    font-size:34px;
+    color:rgba(255,255,255,.16);
+    font-weight:700;
+  }
+  .step h3{font-size:16px;margin-top:10px;color:#fff;}
+  .step p{margin-top:8px;font-size:13.5px;color:var(--ink-70);}
+
+  /* ===== FORMATS ===== */
+  .formats{background:var(--paper);}
+  .format-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .format-card{
+    background:var(--paper-raise);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    border:1px solid rgba(20,20,27,.08);
+    display:flex;flex-direction:column;
+    min-height:190px;
+  }
+  .format-card.highlight{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+  }
+  .format-card h3{font-size:17px;}
+  .format-card.highlight h3{color:#fff;}
+  .format-card p{font-size:13.5px;color:var(--paper-ink-70);margin-top:10px;flex:1;}
+  .format-card.highlight p{color:var(--ink-70);}
+  .format-tag{
+    align-self:flex-start;
+    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);
+    background:var(--coral);
+    padding:5px 11px;
+    border-radius:999px;
+    margin-top:14px;
+  }
+  .package-features{
+    list-style:none;
+    margin:14px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    flex:1;
+  }
+  .package-features li{
+    font-size:13.5px;
+    color:var(--paper-ink-70);
+    display:flex;gap:9px;align-items:flex-start;
+    line-height:1.4;
+  }
+  .package-features li::before{
+    content:"\2713";
+    color:var(--ink);
+    background:var(--coral);
+    width:16px;height:16px;border-radius:50%;
+    flex:none;
+    font-size:10px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .format-card.highlight .package-features li{color:var(--ink-70);}
+
+  /* ===== PHOTO PLACEHOLDERS ===== */
+  .photo-ph{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+      repeating-linear-gradient(135deg, rgba(20,20,27,.07) 0 2px, transparent 2px 10px),
+      linear-gradient(155deg,#e2dfd8,#cfcbc2);
+    border:1px solid rgba(20,20,27,.1);
+    display:flex;align-items:flex-end;
+  }
+  .photo-ph.dark{
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 2px, transparent 2px 10px),
+      linear-gradient(155deg,#1a1a10,#0d0d0d 60%);
+    border-color:rgba(255,255,255,.08);
+  }
+  .photo-ph-tag{
+    position:relative;z-index:2;
+    margin:14px;
+    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--paper-ink-45);
+    background:rgba(255,255,255,.75);
+    padding:6px 10px;border-radius:999px;
+  }
+  .photo-ph.dark .photo-ph-tag{color:var(--ink-70);background:rgba(255,255,255,.1);}
+
+  .session-gallery{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:16px;
+    height:420px;
+  }
+  .session-gallery .photo-ph:first-child{grid-row:1/3;}
+
+  /* ===== CLIENTS ===== */
+  .clients{background:var(--ink);color:#fff;padding:64px 0;}
+  .clients .section-head{margin-bottom:36px;}
+  .client-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+  }
+  .client-logo{
+    aspect-ratio:2.4/1;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Unbounded';
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--ink-45);
+    background:rgba(255,255,255,.03);
+    text-align:center;
+    padding:8px;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{background:var(--paper);}
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .testi-card{
+    background:var(--paper-raise);
+    border:1px solid rgba(20,20,27,.08);
+    border-radius:var(--radius);
+    padding:26px;
+    display:flex;flex-direction:column;
+    gap:16px;
+  }
+  .testi-card p.body{font-size:14.5px;color:var(--ink);line-height:1.55;}
+  .testi-who{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:repeating-linear-gradient(135deg, rgba(20,20,27,.08) 0 2px, transparent 2px 8px), #d8d4cb;
+    flex:none;
+    border:1px solid rgba(20,20,27,.1);
+  }
+  .testi-who div strong{display:block;font-size:13.5px;}
+  .testi-who div span{display:block;font-size:12px;color:var(--paper-ink-45);margin-top:2px;}
+
+  /* ===== CTA / FORM ===== */
+  .cta{background:var(--paper);}
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .cta-copy h2{font-size:clamp(26px,3.2vw,36px);margin-top:14px;}
+  .cta-copy p{margin-top:16px;font-size:15.5px;color:var(--paper-ink-70);max-width:44ch;}
+  .cta-list{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
+  .cta-list li{
+    list-style:none;
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:14.5px;color:var(--paper-ink-70);
+  }
+  .cta-list .check{
+    flex:none;width:20px;height:20px;border-radius:50%;
+    background:var(--coral);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;margin-top:1px;
+  }
+
+  form.enquiry{
+    background:var(--paper-raise);
+    border-radius:20px;
+    padding:34px;
+    border:1px solid rgba(20,20,27,.08);
+    box-shadow:0 30px 60px -30px rgba(20,20,27,.25);
+  }
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;font-size:12.5px;font-weight:700;letter-spacing:.03em;
+    color:var(--paper-ink-70);margin-bottom:7px;text-transform:uppercase;
+  }
+  .field input,.field select,.field textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1.5px solid rgba(20,20,27,.14);
+    font-family:'Plus Jakarta Sans';
+    font-size:14.5px;
+    background:#fbfbfb;
+    color:var(--ink);
+  }
+  .field select{
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    padding-right:38px;
+    cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2314141b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    background-size:14px;
+  }
+  .field select::-ms-expand{display:none;}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:2px solid var(--coral);
+    outline-offset:1px;
+    border-color:transparent;
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  form.enquiry .btn{width:100%;margin-top:6px;}
+  .form-success{
+    display:none;
+    text-align:center;
+    padding:20px 10px;
+  }
+  .form-success.show{display:block;}
+  .form-success h3{font-size:19px;}
+  .form-success p{margin-top:10px;font-size:14px;color:var(--paper-ink-70);}
+
+  /* ===== MID-PAGE CTA BANDS ===== */
+  .mid-cta{
+    padding:52px 0;
+    text-align:center;
+  }
+  .mid-cta.on-light{background:var(--paper-raise);border-top:1px solid rgba(20,20,27,.08);border-bottom:1px solid rgba(20,20,27,.08);}
+  .mid-cta.on-dark{background:var(--ink-soft);}
+  .mid-cta h3{
+    font-size:clamp(19px,2.4vw,26px);
+    margin-bottom:20px;
+    max-width:640px;
+    margin-left:auto;margin-right:auto;
+  }
+  .mid-cta.on-dark h3{color:#fff;}
+
+  /* ===== FAQ ===== */
+  .faq{background:var(--paper);}
+  .faq-list{max-width:760px;}
+  .faq-item{
+    border-bottom:1px solid rgba(20,20,27,.12);
+    padding:20px 0;
+  }
+  .faq-item summary{
+    font-family:'Unbounded';
+    font-size:16px;
+    cursor:pointer;
+    list-style:none;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:20px;
+    color:var(--coral);
+    flex:none;
+  }
+  .faq-item[open] summary::after{content:"\2212";}
+  .faq-item p{
+    margin-top:14px;
+    font-size:14.5px;
+    color:var(--paper-ink-70);
+    max-width:64ch;
+  }
+
+  /* ===== INSTRUCTOR ===== */
+  .instructor{background:var(--ink);color:#fff;}
+  .instructor-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .instructor-photo{
+    aspect-ratio:4/5;
+  }
+  .instructor-copy .eyebrow{margin-bottom:0;}
+  .instructor-copy h2{
+    font-size:clamp(26px,3.2vw,36px);
+    margin-top:14px;
+    color:#fff;
+  }
+  .instructor-copy p.lede-sm{
+    margin-top:16px;
+    font-size:15.5px;
+    color:var(--ink-70);
+    max-width:56ch;
+  }
+  .instructor-stats{
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    gap:28px;
+    margin:28px 0;
+  }
+  .instructor-stat strong{
+    display:block;
+    font-family:'Unbounded';
+    font-size:26px;
+    color:var(--coral);
+  }
+  .instructor-stat span{
+    display:block;
+    font-size:12.5px;
+    color:var(--ink-45);
+    margin-top:4px;
+  }
+  .instructor-list{margin-top:6px;display:flex;flex-direction:column;gap:12px;}
+  .instructor-list li{
+    list-style:none;
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:14.5px;color:var(--ink-70);
+  }
+  .instructor-list .check{
+    flex:none;width:20px;height:20px;border-radius:50%;
+    background:var(--gold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;margin-top:1px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:var(--ink-70);padding:44px 0;}
+  footer .wrap{
+    display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;
+    font-size:13px;
+  }
+  footer .logo{margin-bottom:4px;}
+
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{aspect-ratio:16/9;}
+    .instructor-grid{grid-template-columns:1fr;}
+    .instructor-photo{aspect-ratio:16/9;}
+    .benefit-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;row-gap:32px;}
+    .step{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;}
+    .format-grid{grid-template-columns:1fr 1fr;}
+    .cta-grid{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .format-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand-lockup">
+      <svg class="brand-mark" viewBox="0 0 70 44" xmlns="http://www.w3.org/2000/svg" aria-label="The Floor Session logo">
+        <rect x="2" y="2" width="40" height="40" rx="9" fill="none" stroke="currentColor" stroke-width="3.2"/>
+        <text x="22" y="29" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="17" fill="currentColor">FS</text>
+        <rect x="48" y="32" width="5" height="10" rx="1" fill="currentColor"/>
+        <rect x="55" y="24" width="5" height="18" rx="1" fill="currentColor"/>
+        <rect x="62" y="16" width="5" height="26" rx="1" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">The Floor Session</span>
+    </div>
+    <div class="nav-links">
+      <a href="#why">Why it works</a>
+      <a href="#instructor">Instructor</a>
+      <a href="#session">The session</a>
+      <a href="#clients">Clients</a>
+      <a href="#enquire">Enquire</a>
+    </div>
+    <a href="#enquire" class="btn btn-dark btn-sm">Enquire Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-hook">Tired of team building activities nobody actually wants to attend?</p>
+      <h1>The Floor Session</h1>
+      <p class="hero-tagline">Corporate Team Building Through Music &amp; Movement.</p>
+      <p class="lede">A single dance session built for team bonding &mdash; for admin, marketing, accounting and any other office-based team ready to get off their desks.</p>
+      <div class="hero-actions">
+        <a href="#enquire" class="btn btn-primary">Enquire Now</a>
+      </div>
+    </div>
+    <div class="hero-visual photo-ph dark">
+      <span class="photo-ph-tag">Photo placeholder &mdash; session in action</span>
+    </div>
+  </div>
+
+  <svg class="beatline" viewBox="0 0 400 44" preserveAspectRatio="none" aria-hidden="true">
+    <!-- generated bars -->
+  </svg>
+
+  <div class="trust-strip">
+    <div class="wrap">
+      <span class="chip"><span class="dot"></span>Spotswood studio, 15 min from CBD</span>
+      <span class="chip"><span class="dot"></span>90 minutes, one booking</span>
+      <span class="chip"><span class="dot"></span>Groups &lt;15, 15&ndash;30, or 30+</span>
+      <span class="chip"><span class="dot"></span>Fully insured, all ages &amp; fitness levels</span>
+    </div>
+  </div>
+</header>
+
+<section class="benefits reveal" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-light">Why office teams book us</p>
+      <h2>A wellness initiative people actually show up for.</h2>
+      <p>Most workplace wellness perks get quietly ignored. This one doesn't. For 90 minutes, admin, marketing, accounting and every other office-based team swaps the desk for a dance floor &mdash; and leaves on a genuine high. Fun music, a good sweat, a hit of real endorphins, and a room where the loudest voice in the meeting and the quietest person on the team are suddenly on exactly the same level, just there to move and laugh.</p>
+    </div>
+    <div class="feel-strip">
+      <span class="feel-tag">Genuinely fun</span>
+      <span class="feel-tag">Endorphins, not admin</span>
+      <span class="feel-tag">A proper sweat</span>
+      <span class="feel-tag">Feel-good music</span>
+      <span class="feel-tag">Everyone on the same level</span>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <p class="benefit-num">01</p>
+        <h3>Energy &amp; focus</h3>
+        <p>A short burst of movement mid-week measurably lifts mood and concentration &mdash; better than another coffee run.</p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-num">02</p>
+        <h3>Cross-team connection</h3>
+        <p>Dance forces people out of their usual desk cliques. Whether it's admin sitting next to sales or accounts next to marketing, teams that move together talk to each other differently afterwards.</p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-num">03</p>
+        <h3>Zero admin for you</h3>
+        <p>We bring the studio, the music, the choreography and the instructor. All you supply is the people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta on-light">
+  <div class="wrap">
+    <h3>See how The Floor Session would land with your team.</h3>
+    <a href="#enquire" class="btn btn-dark">Enquire Now</a>
+  </div>
+</div>
+
+<section class="process reveal" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-dark">How it works</p>
+      <h2>Four steps from enquiry to a session your team talks about for weeks.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <p class="step-index">01</p>
+        <h3>Tell us the brief</h3>
+        <p>Team size, occasion, package and your preferred date.</p>
+      </div>
+      <div class="step">
+        <p class="step-index">02</p>
+        <h3>We confirm the details</h3>
+        <p>Package, pricing and a run sheet &mdash; usually within one business day.</p>
+      </div>
+      <div class="step">
+        <p class="step-index">03</p>
+        <h3>We turn up and run it</h3>
+        <p>Instructor, music and choreography scaled to the group &mdash; no experience required.</p>
+      </div>
+      <div class="step">
+        <p class="step-index">04</p>
+        <h3>You get the wrap-up</h3>
+        <p>Photos or a short recap you can drop straight into your wellness reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="instructor reveal" id="instructor">
+  <div class="wrap instructor-grid">
+    <div class="photo-ph dark instructor-photo">
+      <span class="photo-ph-tag">Photo placeholder &mdash; Andrew Dowton</span>
+    </div>
+    <div class="instructor-copy">
+      <p class="eyebrow on-dark">Your instructor</p>
+      <h2>Led by Andrew Dowton.</h2>
+      <p class="lede-sm">An experienced dance teacher and choreographer who's spent the last 15 years getting people of every level moving &mdash; from absolute beginners to professionals. Andrew is also a business owner who has spent many years working within corporate settings &mdash; so he knows how to read a room of professionals, adapt on the fly, and get genuine buy-in from people who didn't necessarily sign up to dance.</p>
+      <div class="instructor-stats">
+        <div class="instructor-stat">
+          <strong>15+</strong>
+          <span>Years teaching</span>
+        </div>
+        <div class="instructor-stat">
+          <strong>3M+</strong>
+          <span>YouTube views</span>
+        </div>
+        <div class="instructor-stat">
+          <strong>30K+</strong>
+          <span>Subscribers globally</span>
+        </div>
+      </div>
+      <ul class="instructor-list">
+        <li><span class="check">&check;</span>Taught thousands of students over 15 years, all levels</li>
+        <li><span class="check">&check;</span>A YouTube channel with multiple videos and over 3 million views worldwide</li>
+        <li><span class="check">&check;</span>A business owner who has spent many years working in corporate settings &mdash; fluent in professional environments, not just dance ones</li>
+        <li><span class="check">&check;</span>Knows how to bring a room full of professionals together &mdash; and get the most out of everyone while having a genuinely fun time</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="formats reveal" id="session">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-light">The Floor Session</p>
+      <h2>One booking. One session. Built entirely around your team.</h2>
+      <p>Desks pushed back, music up, phones down. Every booking runs for 90 minutes at our Spotswood studio &mdash; easy to reach by public transport or freeway, and just 15 minutes from the CBD &mdash; with enough time for a proper intro, a dance class in groups, and a warm down to send everyone home buzzing. No experience needed &mdash; every session is scaled to the room, from the reluctant dancers to the ones who take over the floor.</p>
+    </div>
+
+    <div class="session-gallery" style="margin-bottom:44px;">
+      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; wide group shot</span></div>
+      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; close-up</span></div>
+      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; instructor leading</span></div>
+    </div>
+
+    <div class="section-head" style="margin-bottom:32px;">
+      <p class="eyebrow on-light">Packages</p>
+      <h2 style="font-size:clamp(24px,3vw,32px);">Choose the package that fits.</h2>
+      <p>Try it once and see the reaction, or make it a regular fixture &mdash; book it as a one-off, or set up multiple sessions over time. Either way, the energy on the day doesn't change.</p>
+    </div>
+
+    <div class="format-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="format-card">
+        <h3>Class Only</h3>
+        <p>90 minutes of music, movement and momentum &mdash; run flat out for your team, no fluff, no filler.</p>
+        <ul class="package-features">
+          <li>Intro</li>
+          <li>Warm up</li>
+          <li>Routine</li>
+          <li>Performance</li>
+        </ul>
+        <span class="format-tag">The Essentials</span>
+      </div>
+      <div class="format-card highlight">
+        <h3>Class + Video + Instructional</h3>
+        <p>All the same energy &mdash; plus the highlight reel and cheat sheet your team will actually want to watch again.</p>
+        <ul class="package-features">
+          <li>Intro</li>
+          <li>Warm up</li>
+          <li>Routine</li>
+          <li>Performance</li>
+          <li>The full session captured on video and sent to your team as a fun memory</li>
+          <li>A step-by-step instructional video, for anyone who wants to keep perfecting the steps</li>
+        </ul>
+        <span class="format-tag">Most popular</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta on-dark">
+  <div class="wrap">
+    <h3>Groups &lt;15, 15&ndash;30, or 30+ &mdash; one 90 minute booking, ready when you are.</h3>
+    <a href="#enquire" class="btn btn-primary">Enquire Now</a>
+  </div>
+</div>
+
+<section class="clients reveal" id="clients">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-dark">Who we've worked with</p>
+      <h2>Teams we've had on the floor.</h2>
+    </div>
+    <div class="client-grid">
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+      <div class="client-logo">Client logo</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-light">What teams say</p>
+      <h2>Straight from the people who booked us.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about energy, connection or how the team reacted."</p>
+        <div class="testi-who">
+          <div class="testi-avatar"></div>
+          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about how easy the booking process was."</p>
+        <div class="testi-who">
+          <div class="testi-avatar"></div>
+          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about the most reluctant person in the room having a great time."</p>
+        <div class="testi-who">
+          <div class="testi-avatar"></div>
+          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow on-light">Common questions</p>
+      <h2>Before you enquire.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do we need any dance experience?</summary>
+        <p>None at all. The Floor Session is scaled to the room &mdash; from people who've never danced before to the ones who take over the floor. Everyone can follow along.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if some of the team don't want to join in?</summary>
+        <p>That's completely fine. There's no pressure &mdash; people who want to watch, clap and cheer are welcome to. Most reluctant starters end up on the floor within the first ten minutes anyway.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is it suitable for all fitness levels and ages?</summary>
+        <p>Yes. The session is fully insured and designed to flex to the group &mdash; low-impact options are always available alongside the higher-energy choreography.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is it held?</summary>
+        <p>At TDC The Dance Company, 214B Hall St, Spotswood &mdash; a 2 minute walk from Spotswood Train Station, and just 15 minutes from the CBD (first exit after the West Gate Bridge).</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <p>Pricing depends on group size and package. Enquire with your team size and preferred date and we'll come back with a clear quote &mdash; usually within one business day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do we need to bring?</summary>
+        <p>Just comfortable clothes and closed shoes. We handle the music, the choreography and the instructor.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta on-light">
+  <div class="wrap">
+    <h3>Still deciding? Enquire and we'll help you figure out what fits.</h3>
+    <a href="#enquire" class="btn btn-dark">Enquire Now</a>
+  </div>
+</div>
+
+<section class="cta reveal" id="enquire">
+  <div class="wrap cta-grid">
+    <div class="cta-copy">
+      <p class="eyebrow on-light">Enquire now</p>
+      <h2>See how a session would suit your team.</h2>
+      <p>No obligation, no hard sell &mdash; just a clear picture of what a single session would look like for your workplace.</p>
+      <ul class="cta-list">
+        <li><span class="check">&check;</span>One 90 minute session, run from start to finish</li>
+        <li><span class="check">&check;</span>Any group size &mdash; &lt;15, 15&ndash;30, or 30+</li>
+        <li><span class="check">&check;</span>Held at our Spotswood studio, 15 minutes from the CBD</li>
+        <li><span class="check">&check;</span>Fully insured &mdash; suitable for all fitness levels</li>
+      </ul>
+    </div>
+
+    <form class="enquiry" id="enquiryForm">
+      <div id="formFields">
+        <input type="text" name="company_website" id="company_website" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
+        <div class="field-row">
+          <div class="field">
+            <label for="fname">Full name</label>
+            <input id="fname" name="fname" type="text" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="teamsize">Team size</label>
+            <select id="teamsize" name="teamsize">
+              <option>Under 15</option>
+              <option>15&ndash;30</option>
+              <option>30+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="package">Package</label>
+            <select id="package" name="package">
+              <option>Class Only</option>
+              <option>Class + Video + Instructional</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bookingtype">Booking type</label>
+          <select id="bookingtype" name="bookingtype">
+            <option>One-off session</option>
+            <option>Multiple sessions</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Anything we should know?</label>
+          <textarea id="message" name="message" rows="3" placeholder="Occasion, dates in mind, venue..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Enquire Now</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <h3>Got it &mdash; thank you.</h3>
+        <p>We'll come back to you within one business day to talk through how a session would suit your team.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand-lockup" style="margin-bottom:10px;">
+        <svg class="brand-mark" viewBox="0 0 70 44" xmlns="http://www.w3.org/2000/svg" aria-label="The Floor Session logo">
+          <rect x="2" y="2" width="40" height="40" rx="9" fill="none" stroke="currentColor" stroke-width="3.2"/>
+          <text x="22" y="29" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="17" fill="currentColor">FS</text>
+          <rect x="48" y="32" width="5" height="10" rx="1" fill="currentColor"/>
+          <rect x="55" y="24" width="5" height="18" rx="1" fill="currentColor"/>
+          <rect x="62" y="16" width="5" height="26" rx="1" fill="currentColor"/>
+        </svg>
+        <span class="brand-word">The Floor Session</span>
+      </div>
+      <div>Held at TDC The Dance Company &mdash; 214B Hall St, Spotswood</div>
+      <div style="font-size:12.5px;opacity:.65;margin-top:4px;">2 minute walk from Spotswood Train Station &middot; 15 min from the CBD, first exit after the West Gate Bridge</div>
+    </div>
+    <div>hello@studioname.com.au</div>
+  </div>
+</footer>
+
+<script>
+  // Beat-line bars generated programmatically
+  (function(){
+    const svg = document.querySelector('.beatline');
+    const barCount = 60;
+    const w = 400 / barCount;
+    for(let i=0;i<barCount;i++){
+      const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+      const h = 10 + Math.abs(Math.sin(i*0.5))*24;
+      rect.setAttribute('x', i*w + w*0.25);
+      rect.setAttribute('width', w*0.5);
+      rect.setAttribute('height', h);
+      rect.setAttribute('y', (44-h)/2);
+      rect.setAttribute('rx', 1.2);
+      rect.style.animationDelay = (i*0.03)+'s';
+      svg.appendChild(rect);
+    }
+  })();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Form submit — sends data to the Netlify function, which writes to Airtable
+  const form = document.getElementById('enquiryForm');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const payload = {
+      fname: form.fname.value,
+      company: form.company.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      teamsize: form.teamsize.value,
+      package: form.package.value,
+      bookingtype: form.bookingtype.value,
+      message: form.message.value,
+      company_website: form.company_website.value // honeypot
+    };
+
+    try {
+      const res = await fetch('/.netlify/functions/submit-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Submission failed');
+      document.getElementById('formFields').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      alert("Something went wrong sending your enquiry — please try again, or email us directly.");
+    }
+  });
+</script>
+
+</body>
+</html>
