@@ -366,6 +366,11 @@
     background:rgba(255,255,255,.75);
     padding:6px 10px;border-radius:999px;
   }
+  .photo-ph img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+  }
   .photo-ph.dark .photo-ph-tag{color:var(--ink-70);background:rgba(255,255,255,.1);}
 
   .session-gallery{
@@ -397,6 +402,28 @@
     background:rgba(255,255,255,.03);
     text-align:center;
     padding:8px;
+  }
+  .clients .section-head p{color:var(--ink-70);}
+  .fits-columns{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    margin-bottom:40px;
+  }
+  .fits-columns .fits-label{
+    font-family:'Unbounded';
+    font-size:13px;
+    color:var(--coral);
+    margin-bottom:14px;
+  }
+  .fits-closer{
+    font-size:19px;
+    font-weight:700;
+    color:#fff;
+    max-width:640px;
+  }
+  @media (max-width:900px){
+    .fits-columns{grid-template-columns:1fr;gap:28px;}
   }
 
   /* ===== TESTIMONIALS ===== */
@@ -647,7 +674,7 @@
       <a href="#why">Why it works</a>
       <a href="#instructor">Instructor</a>
       <a href="#session">The session</a>
-      <a href="#clients">Clients</a>
+      <a href="#clients">Who it's for</a>
       <a href="#enquire">Enquire</a>
     </div>
     <a href="#enquire" class="btn btn-dark btn-sm">Enquire Now</a>
@@ -798,9 +825,9 @@
     </div>
 
     <div class="session-gallery" style="margin-bottom:44px;">
-      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; wide group shot</span></div>
-      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; close-up</span></div>
-      <div class="photo-ph"><span class="photo-ph-tag">Photo placeholder &mdash; instructor leading</span></div>
+      <div class="photo-ph"><img src="images/session-wide-group.jpg" alt="A corporate team dancing together during a Floor Session"></div>
+      <div class="photo-ph"><img src="images/session-tdc-action.jpg" alt="Andrew Dowton leading a team through choreography at the TDC Spotswood studio"></div>
+      <div class="photo-ph"><img src="images/studio-empty-tdc.jpg" alt="The TDC Spotswood studio where every Floor Session is held"></div>
     </div>
 
     <div class="section-head" style="margin-bottom:32px;">
@@ -848,50 +875,68 @@
 <section class="clients reveal" id="clients">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow on-dark">Who we've worked with</p>
-      <h2>Teams we've had on the floor.</h2>
+      <p class="eyebrow on-dark">Who it's for</p>
+      <h2>Built for teams exactly like yours.</h2>
+      <p>Whoever's booking &mdash; HR, a social club, or a manager who just wants their team to have a good time &mdash; this fits.</p>
     </div>
-    <div class="client-grid">
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
-      <div class="client-logo">Client logo</div>
+    <div class="fits-columns">
+      <div>
+        <p class="fits-label">Teams</p>
+        <ul class="instructor-list">
+          <li><span class="check">&check;</span>Sales &amp; client-facing teams</li>
+          <li><span class="check">&check;</span>Admin &amp; operations teams</li>
+          <li><span class="check">&check;</span>Project &amp; delivery teams</li>
+          <li><span class="check">&check;</span>Marketing &amp; creative teams</li>
+        </ul>
+      </div>
+      <div>
+        <p class="fits-label">Industries</p>
+        <ul class="instructor-list">
+          <li><span class="check">&check;</span>Law firms</li>
+          <li><span class="check">&check;</span>Accounting firms</li>
+          <li><span class="check">&check;</span>Consulting firms</li>
+          <li><span class="check">&check;</span>IT &amp; tech companies</li>
+        </ul>
+      </div>
+      <div>
+        <p class="fits-label">Occasions</p>
+        <ul class="instructor-list">
+          <li><span class="check">&check;</span>End-of-year celebrations</li>
+          <li><span class="check">&check;</span>Team offsites &amp; away days</li>
+          <li><span class="check">&check;</span>Whole-office social days</li>
+        </ul>
+      </div>
     </div>
+    <p class="fits-closer">Basically &mdash; if you run a team, or you're part of one, and you want a team building session people actually enjoy, this is for you.</p>
   </div>
 </section>
 
 <section class="testimonials reveal">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow on-light">What teams say</p>
-      <h2>Straight from the people who booked us.</h2>
+      <p class="eyebrow on-light">What people say</p>
+      <h2>The teaching style your team will get on the day.</h2>
     </div>
     <div class="testi-grid">
       <div class="testi-card">
-        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about energy, connection or how the team reacted."</p>
+        <p class="body">"Andrew's Open Adult Classes on Sundays are really cool and fun! I love the style and charm he brings into the moves &mdash; he adopts slightly different methods to help you remember the choreo and lets you enjoy the songs! Highly recommend his classes to anyone."</p>
         <div class="testi-who">
           <div class="testi-avatar"></div>
-          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+          <div><strong>Shom Y</strong><span>Open adult classes</span></div>
         </div>
       </div>
       <div class="testi-card">
-        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about how easy the booking process was."</p>
+        <p class="body">"I haven't found a class that really worked for me until I found Andrew's class! ... Andrew has a great sense of musicality, and his choreography to his music selection really shows this. The classes are fun ... and the energy and vibe of the class is also really great. Highly recommended class and teacher!"</p>
         <div class="testi-who">
           <div class="testi-avatar"></div>
-          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+          <div><strong>Masha L</strong><span>Beginner hip hop class</span></div>
         </div>
       </div>
       <div class="testi-card">
-        <p class="body">"Placeholder testimonial &mdash; swap in a real quote about the most reluctant person in the room having a great time."</p>
+        <p class="body">"Thanks again for today. I think everyone had a terrific time, and it was great to push them!"</p>
         <div class="testi-who">
           <div class="testi-avatar"></div>
-          <div><strong>Placeholder Name</strong><span>Role, Company</span></div>
+          <div><strong>David M</strong><span>Team session</span></div>
         </div>
       </div>
     </div>
