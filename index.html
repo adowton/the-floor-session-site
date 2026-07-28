@@ -371,6 +371,9 @@
     object-fit:cover;
     display:block;
   }
+  .instructor-photo img{
+    object-position:center top;
+  }
   .photo-ph.dark .photo-ph-tag{color:var(--ink-70);background:rgba(255,255,255,.1);}
 
   .session-gallery{
@@ -641,7 +644,7 @@
     .hero .wrap{grid-template-columns:1fr;}
     .hero-visual{aspect-ratio:16/9;}
     .instructor-grid{grid-template-columns:1fr;}
-    .instructor-photo{aspect-ratio:16/9;}
+    .instructor-photo{aspect-ratio:4/5;}
     .benefit-grid{grid-template-columns:1fr;}
     .steps{grid-template-columns:1fr 1fr;row-gap:32px;}
     .step{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;}
@@ -649,6 +652,15 @@
     .cta-grid{grid-template-columns:1fr;}
     .field-row{grid-template-columns:1fr;}
     .nav-links{display:none;}
+    .session-gallery{
+      grid-template-columns:1fr;
+      grid-template-rows:none;
+      height:auto;
+    }
+    .session-gallery .photo-ph{
+      grid-row:auto;
+      aspect-ratio:4/3;
+    }
   }
   @media (max-width:520px){
     .wrap{padding:0 20px;}
