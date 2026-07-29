@@ -53,6 +53,19 @@
   .eyebrow.on-dark{color:var(--gold);}
   .eyebrow.on-light{color:var(--ink);}
 
+  /* ===== TOP HOOK BANNER ===== */
+  .top-banner{
+    background:var(--ink);
+    color:var(--gold);
+    text-align:center;
+    padding:28px 24px;
+    font-family:'Unbounded',sans-serif;
+    font-weight:700;
+    font-size:clamp(1.3rem,4vw,2.5rem);
+    line-height:1.2;
+    letter-spacing:-0.01em;
+  }
+
   /* ===== NAV ===== */
   nav{
     position:sticky;top:0;z-index:50;
@@ -285,8 +298,11 @@
   .formats{background:var(--paper);}
   .format-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:1fr;
     gap:20px;
+  }
+  @media (min-width:901px){
+    .format-grid{grid-template-columns:repeat(3,1fr);}
   }
   .format-card{
     background:var(--paper-raise);
@@ -448,17 +464,19 @@
   }
   .fits-tags{
     display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+    flex-direction:column;
+    gap:12px;
   }
-  .fits-tag{
-    font-size:13.5px;
-    font-weight:600;
-    padding:9px 16px;
-    border-radius:999px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.16);
-    color:#fff;
+  .fits-tags li{
+    list-style:none;
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:14.5px;color:var(--ink-70);
+  }
+  .fits-tags .check{
+    flex:none;width:20px;height:20px;border-radius:50%;
+    background:var(--coral);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;margin-top:1px;
   }
   .fits-closer{
     font-size:19px;
@@ -734,6 +752,8 @@
   </div>
 </nav>
 
+<div class="top-banner">Looking for a fresh idea for your next team event?</div>
+
 <header class="hero">
   <div class="wrap">
     <div>
@@ -889,7 +909,7 @@
       <p>Try it once and see the reaction, or make it a regular fixture &mdash; book it as a one-off, or set up multiple sessions over time. Either way, the energy on the day doesn't change.</p>
     </div>
 
-    <div class="format-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div class="format-grid">
       <div class="format-card">
         <h3>Class Only</h3>
         <p>90 minutes of music, movement and momentum &mdash; run flat out for your team, no fluff, no filler.</p>
@@ -946,34 +966,34 @@
     <div class="fits-columns">
       <div>
         <p class="fits-label">Teams</p>
-        <div class="fits-tags">
-          <span class="fits-tag">HR &amp; People</span>
-          <span class="fits-tag">Product &amp; Engineering</span>
-          <span class="fits-tag">Finance</span>
-          <span class="fits-tag">Customer Service</span>
-          <span class="fits-tag">Sales</span>
-        </div>
+        <ul class="fits-tags">
+          <li><span class="check">&check;</span>HR &amp; People</li>
+          <li><span class="check">&check;</span>Product &amp; Engineering</li>
+          <li><span class="check">&check;</span>Finance</li>
+          <li><span class="check">&check;</span>Customer Service</li>
+          <li><span class="check">&check;</span>Sales</li>
+        </ul>
       </div>
       <div>
         <p class="fits-label">Industries</p>
-        <div class="fits-tags">
-          <span class="fits-tag">Law Firms</span>
-          <span class="fits-tag">Consulting</span>
-          <span class="fits-tag">Real Estate</span>
-          <span class="fits-tag">Healthcare</span>
-          <span class="fits-tag">Banking</span>
-          <span class="fits-tag">Retail</span>
-        </div>
+        <ul class="fits-tags">
+          <li><span class="check">&check;</span>Law Firms</li>
+          <li><span class="check">&check;</span>Consulting</li>
+          <li><span class="check">&check;</span>Real Estate</li>
+          <li><span class="check">&check;</span>Healthcare</li>
+          <li><span class="check">&check;</span>Banking</li>
+          <li><span class="check">&check;</span>Retail</li>
+        </ul>
       </div>
       <div>
         <p class="fits-label">Occasions</p>
-        <div class="fits-tags">
-          <span class="fits-tag">End-of-Year Celebrations</span>
-          <span class="fits-tag">Conference Wrap-ups</span>
-          <span class="fits-tag">Staff Appreciation Days</span>
-          <span class="fits-tag">Milestone Celebrations</span>
-          <span class="fits-tag">Sales Kick-offs</span>
-        </div>
+        <ul class="fits-tags">
+          <li><span class="check">&check;</span>End-of-Year Celebrations</li>
+          <li><span class="check">&check;</span>Conference Wrap-ups</li>
+          <li><span class="check">&check;</span>Staff Appreciation Days</li>
+          <li><span class="check">&check;</span>Milestone Celebrations</li>
+          <li><span class="check">&check;</span>Sales Kick-offs</li>
+        </ul>
       </div>
     </div>
     <p class="fits-closer">Basically &mdash; if you run a team, or you're part of one, and you want a team building session people actually enjoy, this is for you.</p>
