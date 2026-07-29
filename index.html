@@ -295,16 +295,34 @@
     border:1px solid rgba(20,20,27,.08);
     display:flex;flex-direction:column;
     min-height:190px;
+    position:relative;
+    overflow:hidden;
   }
   .format-card.highlight{
     background:var(--ink);
     color:#fff;
-    border-color:var(--ink);
+    border:1.5px solid #e5484d;
   }
   .format-card h3{font-size:17px;}
   .format-card.highlight h3{color:#fff;}
   .format-card p{font-size:13.5px;color:var(--paper-ink-70);margin-top:10px;flex:1;}
   .format-card.highlight p{color:var(--ink-70);}
+  .format-ribbon{
+    position:absolute;
+    bottom:24px;
+    right:-46px;
+    width:180px;
+    transform:rotate(-45deg);
+    background:var(--coral);
+    color:var(--ink);
+    text-align:center;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:7px 0;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+  }
   .format-tag{
     align-self:flex-start;
     font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
@@ -427,6 +445,20 @@
   .fits-hook strong{
     color:#fff;
     font-weight:700;
+  }
+  .fits-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .fits-tag{
+    font-size:13.5px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
   }
   .fits-closer{
     font-size:19px;
@@ -657,7 +689,7 @@
     .benefit-grid{grid-template-columns:1fr;}
     .steps{grid-template-columns:1fr 1fr;row-gap:32px;}
     .step{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;}
-    .format-grid{grid-template-columns:1fr 1fr;}
+    .format-grid{grid-template-columns:1fr;}
     .cta-grid{grid-template-columns:1fr;}
     .field-row{grid-template-columns:1fr;}
     .nav-links{display:none;}
@@ -724,10 +756,10 @@
 
   <div class="trust-strip">
     <div class="wrap">
-      <span class="chip"><span class="dot"></span>Spotswood studio, 15 min from CBD</span>
+      <span class="chip"><span class="dot"></span>Easy to reach, close to the city</span>
       <span class="chip"><span class="dot"></span>90 minutes, one booking</span>
-      <span class="chip"><span class="dot"></span>Groups &lt;15, 15&ndash;30, or 30+</span>
-      <span class="chip"><span class="dot"></span>Fully insured, all ages &amp; fitness levels</span>
+      <span class="chip"><span class="dot"></span>Any group size, big or small</span>
+      <span class="chip"><span class="dot"></span>No experience needed, any fitness level</span>
     </div>
   </div>
 </header>
@@ -788,7 +820,7 @@
       <div class="step">
         <p class="step-index">02</p>
         <h3>We confirm the details</h3>
-        <p>Package, pricing and a run sheet &mdash; usually within one business day.</p>
+        <p>We confirm your package, pricing, date and location &mdash; usually within one business day.</p>
       </div>
       <div class="step">
         <p class="step-index">03</p>
@@ -798,7 +830,7 @@
       <div class="step">
         <p class="step-index">04</p>
         <h3>You get the wrap-up</h3>
-        <p>Photos or a short recap you can drop straight into your wellness reporting.</p>
+        <p>Photos, video, or a full professional edit &mdash; whatever suits, ready to drop straight into your wellness reporting.</p>
       </div>
     </div>
   </div>
@@ -812,7 +844,7 @@
     <div class="instructor-copy">
       <p class="eyebrow on-dark">Your instructor</p>
       <h2>Led by Andrew Dowton.</h2>
-      <p class="lede-sm">An experienced dance teacher and choreographer who's spent the last 15 years getting people of every level moving &mdash; from absolute beginners to professionals. Andrew is also a business owner who has spent many years working within corporate settings &mdash; so he knows how to read a room of professionals, adapt on the fly, and get genuine buy-in from people who didn't necessarily sign up to dance.</p>
+      <p class="lede-sm">An experienced dance teacher and choreographer who's spent the last 15 years getting people of every level moving &mdash; from absolute beginners to professionals, teaching across studios all around Melbourne. Andrew is also a business owner who has spent many years working within corporate settings &mdash; so he knows how to read a room of professionals, adapt on the fly, and get genuine buy-in from people who didn't necessarily sign up to dance.</p>
       <div class="instructor-stats">
         <div class="instructor-stat">
           <strong>15+</strong>
@@ -842,7 +874,7 @@
     <div class="section-head">
       <p class="eyebrow on-light">The Floor Session</p>
       <h2>One booking. One session. Built entirely around your team.</h2>
-      <p>Desks pushed back, music up, phones down. Every booking runs for 90 minutes at our Spotswood studio &mdash; easy to reach by public transport or freeway, and just 15 minutes from the CBD &mdash; with enough time for a proper intro, a dance class in groups, and a warm down to send everyone home buzzing. No experience needed &mdash; every session is scaled to the room, from the reluctant dancers to the ones who take over the floor.</p>
+      <p>Desks pushed back, music up, phones down. Every booking runs for 90 minutes at the studio location &mdash; easy to reach by public transport, just 15 minutes from the CBD (other locations also available) &mdash; with enough time for a proper intro, a dance class in groups, and a warm down to send everyone home buzzing. No experience needed &mdash; every session is scaled to the room, from the reluctant dancers to the ones who take over the floor.</p>
     </div>
 
     <div class="session-gallery" style="margin-bottom:44px;">
@@ -857,7 +889,7 @@
       <p>Try it once and see the reaction, or make it a regular fixture &mdash; book it as a one-off, or set up multiple sessions over time. Either way, the energy on the day doesn't change.</p>
     </div>
 
-    <div class="format-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div class="format-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="format-card">
         <h3>Class Only</h3>
         <p>90 minutes of music, movement and momentum &mdash; run flat out for your team, no fluff, no filler.</p>
@@ -880,7 +912,18 @@
           <li>The full session captured on video and sent to your team as a fun memory</li>
           <li>A step-by-step instructional video, for anyone who wants to keep perfecting the steps</li>
         </ul>
-        <span class="format-tag">Most popular</span>
+        <span class="format-ribbon">Most popular</span>
+      </div>
+      <div class="format-card">
+        <h3>Ongoing Short Course</h3>
+        <p>Multiple sessions building towards one polished routine &mdash; perfect for teams who want more than a one-off, with a professional memento to show for it.</p>
+        <ul class="package-features">
+          <li>Multiple sessions, working towards one routine</li>
+          <li>Final session filmed</li>
+          <li>Professionally produced and edited highlight video</li>
+          <li>A fun, shareable memento for the whole office</li>
+        </ul>
+        <span class="format-tag">Ongoing</span>
       </div>
     </div>
   </div>
@@ -888,7 +931,7 @@
 
 <div class="mid-cta on-dark">
   <div class="wrap">
-    <h3>Groups &lt;15, 15&ndash;30, or 30+ &mdash; one 90 minute booking, ready when you are.</h3>
+    <h3>Groups of all sizes &mdash; one 90-minute booking, whenever you're ready.</h3>
     <a href="#enquire" class="btn btn-primary">Enquire Now</a>
   </div>
 </div>
@@ -903,15 +946,34 @@
     <div class="fits-columns">
       <div>
         <p class="fits-label">Teams</p>
-        <p class="fits-hook">From <strong>HR and people teams</strong> through to <strong>product and engineering</strong>, whether you're in <strong>finance</strong>, <strong>customer service</strong> or <strong>sales</strong> &mdash; this fits. Executives, graduates, and everyone in between are welcome on the floor.</p>
+        <div class="fits-tags">
+          <span class="fits-tag">HR &amp; People</span>
+          <span class="fits-tag">Product &amp; Engineering</span>
+          <span class="fits-tag">Finance</span>
+          <span class="fits-tag">Customer Service</span>
+          <span class="fits-tag">Sales</span>
+        </div>
       </div>
       <div>
         <p class="fits-label">Industries</p>
-        <p class="fits-hook">From <strong>law firms</strong> and <strong>consulting firms</strong> to <strong>real estate agencies</strong> and <strong>healthcare providers</strong> &mdash; if you're office-based anywhere from the CBD to the inner west, we fit. <strong>Banking</strong>, <strong>retail</strong> &mdash; the floor doesn't care what industry you're in.</p>
+        <div class="fits-tags">
+          <span class="fits-tag">Law Firms</span>
+          <span class="fits-tag">Consulting</span>
+          <span class="fits-tag">Real Estate</span>
+          <span class="fits-tag">Healthcare</span>
+          <span class="fits-tag">Banking</span>
+          <span class="fits-tag">Retail</span>
+        </div>
       </div>
       <div>
         <p class="fits-label">Occasions</p>
-        <p class="fits-hook">From <strong>end-of-year celebrations</strong> through to <strong>conference wrap-ups</strong> and <strong>staff appreciation days</strong>, we slot into whatever you're already planning. <strong>Milestone celebrations</strong>, <strong>sales kick-offs</strong> &mdash; pick the occasion, we bring the energy.</p>
+        <div class="fits-tags">
+          <span class="fits-tag">End-of-Year Celebrations</span>
+          <span class="fits-tag">Conference Wrap-ups</span>
+          <span class="fits-tag">Staff Appreciation Days</span>
+          <span class="fits-tag">Milestone Celebrations</span>
+          <span class="fits-tag">Sales Kick-offs</span>
+        </div>
       </div>
     </div>
     <p class="fits-closer">Basically &mdash; if you run a team, or you're part of one, and you want a team building session people actually enjoy, this is for you.</p>
@@ -926,23 +988,20 @@
     </div>
     <div class="testi-grid">
       <div class="testi-card">
-        <p class="body">"Andrew's Open Adult Classes on Sundays are really cool and fun! I love the style and charm he brings into the moves &mdash; he adopts slightly different methods to help you remember the choreo and lets you enjoy the songs! Highly recommend his classes to anyone."</p>
+        <p class="body">"Andrew's classes are really cool and fun! I love the style and charm he brings into the moves &mdash; he adopts slightly different methods to help you remember the choreo and lets you enjoy the songs! Highly recommend his classes to anyone."</p>
         <div class="testi-who">
-          <div class="testi-avatar"></div>
           <div><strong>Shom Y</strong><span>Open adult classes</span></div>
         </div>
       </div>
       <div class="testi-card">
         <p class="body">"I haven't found a class that really worked for me until I found Andrew's class! ... Andrew has a great sense of musicality, and his choreography to his music selection really shows this. The classes are fun ... and the energy and vibe of the class is also really great. Highly recommended class and teacher!"</p>
         <div class="testi-who">
-          <div class="testi-avatar"></div>
-          <div><strong>Masha L</strong><span>Beginner hip hop class</span></div>
+          <div><strong>Masha L</strong><span>Beginner class</span></div>
         </div>
       </div>
       <div class="testi-card">
         <p class="body">"Thanks again for today. I think everyone had a terrific time, and it was great to push them!"</p>
         <div class="testi-who">
-          <div class="testi-avatar"></div>
           <div><strong>David M</strong><span>Team session</span></div>
         </div>
       </div>
@@ -971,7 +1030,7 @@
       </details>
       <details class="faq-item">
         <summary>Where is it held?</summary>
-        <p>At TDC The Dance Company, 214B Hall St, Spotswood &mdash; a 2 minute walk from Spotswood Train Station, and just 15 minutes from the CBD (first exit after the West Gate Bridge).</p>
+        <p>Sessions are usually held at our Spotswood studio &mdash; easy to reach by public transport, and just 15 minutes from the CBD. Depending on your team's location, we can also arrange an alternate venue &mdash; we'll confirm the details with you when you enquire.</p>
       </details>
       <details class="faq-item">
         <summary>How much does it cost?</summary>
@@ -1000,9 +1059,9 @@
       <p>No obligation, no hard sell &mdash; just a clear picture of what a single session would look like for your workplace.</p>
       <ul class="cta-list">
         <li><span class="check">&check;</span>One 90 minute session, run from start to finish</li>
-        <li><span class="check">&check;</span>Any group size &mdash; &lt;15, 15&ndash;30, or 30+</li>
-        <li><span class="check">&check;</span>Held at our Spotswood studio, 15 minutes from the CBD</li>
-        <li><span class="check">&check;</span>Fully insured &mdash; suitable for all fitness levels</li>
+        <li><span class="check">&check;</span>Any group size, all levels welcome</li>
+        <li><span class="check">&check;</span>Easy to reach, held at the studio location</li>
+        <li><span class="check">&check;</span>No experience needed, any fitness level</li>
       </ul>
     </div>
 
@@ -1081,10 +1140,10 @@
         </svg>
         <span class="brand-word">The Floor Session</span>
       </div>
-      <div>Held at TDC The Dance Company &mdash; 214B Hall St, Spotswood</div>
-      <div style="font-size:12.5px;opacity:.65;margin-top:4px;">2 minute walk from Spotswood Train Station &middot; 15 min from the CBD, first exit after the West Gate Bridge</div>
+      <div>Studio locations across Melbourne &mdash; venue confirmed at booking</div>
+      <div style="font-size:12.5px;opacity:.65;margin-top:4px;">Easy to reach by public transport &middot; usually around 15 min from the CBD</div>
     </div>
-    <div>hello@studioname.com.au</div>
+    <div>Trouble with the form? Email me directly at andrewdowton@live.com.au</div>
   </div>
 </footer>
 
