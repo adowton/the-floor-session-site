@@ -492,8 +492,11 @@
   .testimonials{background:var(--paper);}
   .testi-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:1fr;
     gap:22px;
+  }
+  @media (min-width:901px){
+    .testi-grid{grid-template-columns:repeat(3,1fr);}
   }
   .testi-card{
     background:var(--paper-raise);
