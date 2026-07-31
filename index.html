@@ -79,6 +79,12 @@
   }
   .brand-lockup{display:flex;align-items:center;gap:10px;flex:none;color:var(--ink);}
   footer .brand-lockup{color:var(--coral);}
+  .logo-slot{
+    display:flex;align-items:center;
+    height:40px;
+    flex:none;
+  }
+  .logo-slot img{height:100%;width:auto;display:block;}
   .brand-mark{width:40px;height:40px;flex:none;}
   .brand-word{
     font-family:'Unbounded',sans-serif;
@@ -228,6 +234,17 @@
 
   /* ===== WHY / BENEFITS ===== */
   .benefits{background:var(--paper);}
+  .why-intro{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+    margin-bottom:56px;
+  }
+  .why-intro .photo-ph{aspect-ratio:4/3;}
+  @media (max-width:900px){
+    .why-intro{grid-template-columns:1fr;}
+  }
   .benefit-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -734,16 +751,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand-lockup">
-      <svg class="brand-mark" viewBox="0 0 70 44" xmlns="http://www.w3.org/2000/svg" aria-label="The Floor Session logo">
-        <rect x="2" y="2" width="40" height="40" rx="9" fill="none" stroke="currentColor" stroke-width="3.2"/>
-        <text x="22" y="29" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="17" fill="currentColor">FS</text>
-        <rect x="48" y="32" width="5" height="10" rx="1" fill="currentColor"/>
-        <rect x="55" y="24" width="5" height="18" rx="1" fill="currentColor"/>
-        <rect x="62" y="16" width="5" height="26" rx="1" fill="currentColor"/>
-      </svg>
-      <span class="brand-word">The Floor Session</span>
-    </div>
+    <div class="logo-slot"><img src="images/logo-on-yellow.jpg" alt="The Floor Session logo"></div>
     <div class="nav-links">
       <a href="#why">Why it works</a>
       <a href="#instructor">Instructor</a>
@@ -789,10 +797,15 @@
 
 <section class="benefits reveal" id="why">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow on-light">Why office teams book us</p>
-      <h2>A wellness initiative people actually show up for.</h2>
-      <p>Most workplace wellness perks get quietly ignored. This one doesn't. For 90 minutes, admin, marketing, accounting and every other office-based team swaps the desk for a dance floor &mdash; and leaves on a genuine high. Fun music, a good sweat, a hit of real endorphins, and a room where the loudest voice in the meeting and the quietest person on the team are suddenly on exactly the same level, just there to move and laugh.</p>
+    <div class="why-intro">
+      <div class="section-head" style="margin-bottom:0;">
+        <p class="eyebrow on-light">Why office teams book us</p>
+        <h2>A wellness initiative people actually show up for.</h2>
+        <p>Most workplace wellness perks get quietly ignored. This one doesn't. For 90 minutes, admin, marketing, accounting and every other office-based team swaps the desk for a dance floor &mdash; and leaves on a genuine high. Fun music, a good sweat, a hit of real endorphins, and a room where the loudest voice in the meeting and the quietest person on the team are suddenly on exactly the same level, just there to move and laugh.</p>
+      </div>
+      <div class="photo-ph">
+        <div class="photo-ph-tag">Fun team picture</div>
+      </div>
     </div>
     <div class="feel-strip">
       <span class="feel-tag">Genuinely fun</span>
@@ -838,22 +851,22 @@
       <div class="step">
         <p class="step-index">01</p>
         <h3>Tell us the brief</h3>
-        <p>Team size, occasion, package and your preferred date.</p>
+        <p>Team size, occasion, package, dream date &mdash; give us the vision and we'll get it moving.</p>
       </div>
       <div class="step">
         <p class="step-index">02</p>
         <h3>We confirm the details</h3>
-        <p>We confirm your package, pricing, date and location &mdash; usually within one business day.</p>
+        <p>Package, pricing, date and location locked in fast &mdash; usually within one business day.</p>
       </div>
       <div class="step">
         <p class="step-index">03</p>
         <h3>We turn up and run it</h3>
-        <p>Instructor, music and choreography scaled to the group &mdash; no experience required.</p>
+        <p>Music up, energy up &mdash; instructor and choreography scaled to your group, no experience required.</p>
       </div>
       <div class="step">
         <p class="step-index">04</p>
         <h3>You get the wrap-up</h3>
-        <p>Photos, video, or a full professional edit &mdash; whatever suits, ready to drop straight into your wellness reporting.</p>
+        <p>Your team walks away buzzing &mdash; with photos, video or a polished edit ready to show off in your next wellness report.</p>
       </div>
     </div>
   </div>
@@ -874,7 +887,7 @@
           <span>Years teaching</span>
         </div>
         <div class="instructor-stat">
-          <strong>3M+</strong>
+          <strong>4.9M+</strong>
           <span>YouTube views</span>
         </div>
         <div class="instructor-stat">
@@ -884,7 +897,7 @@
       </div>
       <ul class="instructor-list">
         <li><span class="check">&check;</span>Taught thousands of students over 15 years, all levels</li>
-        <li><span class="check">&check;</span>A YouTube channel with multiple videos and over 3 million views worldwide</li>
+        <li><span class="check">&check;</span>A YouTube channel with multiple videos and over 4.9 million views worldwide</li>
         <li><span class="check">&check;</span>A business owner who has spent many years working in corporate settings &mdash; fluent in professional environments, not just dance ones</li>
         <li><span class="check">&check;</span>Knows how to bring a room full of professionals together &mdash; and get the most out of everyone while having a genuinely fun time</li>
       </ul>
@@ -1011,9 +1024,9 @@
     </div>
     <div class="testi-grid">
       <div class="testi-card">
-        <p class="body">"Andrew's classes are really cool and fun! I love the style and charm he brings into the moves &mdash; he adopts slightly different methods to help you remember the choreo and lets you enjoy the songs! Highly recommend his classes to anyone."</p>
+        <p class="body">"Andrew gave our team of doctors an awesome dance experience! He brought the best energy and made everyone feel so comfortable and pumped for the whole time. I'd highly recommend the experience to anyone and any team &mdash; he was able to bring even those nervous about dance along for the ride with great teaching skills and a lot of humour. So many in my team were already asking about the next session!"</p>
         <div class="testi-who">
-          <div><strong>Shom Y</strong><span>Open adult classes</span></div>
+          <div><strong>David M</strong><span>Team session</span></div>
         </div>
       </div>
       <div class="testi-card">
@@ -1023,9 +1036,9 @@
         </div>
       </div>
       <div class="testi-card">
-        <p class="body">"Thanks again for today. I think everyone had a terrific time, and it was great to push them!"</p>
+        <p class="body">"Andrew's classes are really cool and fun! I love the style and charm he brings into the moves &mdash; he adopts slightly different methods to help you remember the choreo and lets you enjoy the songs! Highly recommend his classes to anyone."</p>
         <div class="testi-who">
-          <div><strong>David M</strong><span>Team session</span></div>
+          <div><strong>Shom Y</strong><span>Open adult classes</span></div>
         </div>
       </div>
     </div>
@@ -1153,20 +1166,10 @@
 <footer>
   <div class="wrap">
     <div>
-      <div class="brand-lockup" style="margin-bottom:10px;">
-        <svg class="brand-mark" viewBox="0 0 70 44" xmlns="http://www.w3.org/2000/svg" aria-label="The Floor Session logo">
-          <rect x="2" y="2" width="40" height="40" rx="9" fill="none" stroke="currentColor" stroke-width="3.2"/>
-          <text x="22" y="29" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="17" fill="currentColor">FS</text>
-          <rect x="48" y="32" width="5" height="10" rx="1" fill="currentColor"/>
-          <rect x="55" y="24" width="5" height="18" rx="1" fill="currentColor"/>
-          <rect x="62" y="16" width="5" height="26" rx="1" fill="currentColor"/>
-        </svg>
-        <span class="brand-word">The Floor Session</span>
-      </div>
+      <div class="logo-slot" style="margin-bottom:10px;"><img src="images/logo-on-black.jpg" alt="The Floor Session logo"></div>
       <div>Studio locations across Melbourne &mdash; venue confirmed at booking</div>
-      <div style="font-size:12.5px;opacity:.65;margin-top:4px;">Easy to reach by public transport &middot; usually around 15 min from the CBD</div>
     </div>
-    <div>Trouble with the form? Email me directly at andrewdowton@live.com.au</div>
+    <div>Trouble with the form? Email me directly at thefloorsession@gmail.com</div>
   </div>
 </footer>
 
